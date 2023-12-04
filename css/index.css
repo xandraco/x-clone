@@ -19,3 +19,10 @@
 #btnLogin {
     margin-bottom: 1rem !important;
 }
+
+.main-title {
+    font-family: 'Kanit', sans-serif;
+    font-weight: 600;
+    font-size: xxx-large;
+    margin: 0 auto; 
+}
