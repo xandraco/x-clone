@@ -134,6 +134,19 @@ footer {
     .row.content {height: auto;} 
 }
 
-.main-icon {
-    max-height: 6vh !important;
+.mainIcon {
+    max-height: 2.4rem !important;
+}
+
+.btn {
+    font-size: 1.22rem !important;
+}
+
+.form-block .card-footer {
+    background-color: #fff;
+    border-top-color: #fff;
+}
+.form-block .card {
+    border-left-color: #fff !important;
+    border-right-color: #fff !important;
 }

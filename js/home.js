@@ -18,10 +18,9 @@ const loadPost = async () => {
 
 const dibujaPosts = posts => {
     posts.forEach((item) => {
-        postCard.querySelector('.card-title').textContent = item.titulo
-        postCard.querySelector('.card-subtitle').textContent = item.idUsuario
+        postCard.querySelector('.card-title').textContent = item.idUsuario
+        postCard.querySelector('.card-subtitle').textContent = item.titulo + '     ' + item.fecha
         postCard.querySelector('.card-text').textContent = item.mensaje
-        postCard.querySelector('.fecha').textContent = item.fecha
 
         const clone = postCard.cloneNode(true)
         fragment.appendChild(clone)
