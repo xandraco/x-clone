@@ -198,3 +198,10 @@ a.fa-regular, a.fa-solid {
     padding-left: 6rem!important;
 }
 
+.no-decoration {
+    text-decoration: none!important;
+}
+
+.response-area, #userToRespondCard {
+    border:none !important;
+}

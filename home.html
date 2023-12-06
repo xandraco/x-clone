@@ -82,12 +82,12 @@
                 </div>
                 <div class="card-footer form-group">
                   <div class="row">
-                    <a href="#" class="col-1 fa-regular fa-image"></a>
-                    <a href="#" class="col-1 fa-regular fa-circle"></a>
-                    <a href="#" class="col-1 fa-solid fa-bars-staggered"></a>
-                    <a href="#" class="col-1 fa-regular fa-face-smile"></a>
-                    <a href="#" class="col-1 fa-regular fa-calendar"></a>
-                    <a href="#" class="col-1 fa-regular fa-compass"></a>
+                    <a href="#" class="col-1 fa-regular fa-image mt-3"></a>
+                    <a href="#" class="col-1 fa-regular fa-circle mt-3"></a>
+                    <a href="#" class="col-1 fa-solid fa-bars-staggered mt-3"></a>
+                    <a href="#" class="col-1 fa-regular fa-face-smile mt-3"></a>
+                    <a href="#" class="col-1 fa-regular fa-calendar mt-3"></a>
+                    <a href="#" class="col-1 fa-regular fa-compass mt-3"></a>
                     <div class="col-6 text-end">
                       <button type="submit" class="btn btn-primary rounded-pill">Publicar</button>
                     </div>
@@ -113,7 +113,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
-              <h5 class="modal-title text-end w-100" id="AddUsuarioModalLabel">Borradores</h5>
+              <h6 class="modal-title text-end w-100 response-link-title"><a href="#" class="no-decoration">Borradores</a></h6>
             </div>
             <div class="modal-body">
               <!-- Formulario para Agregar respuesta -->
@@ -122,9 +122,19 @@
                 <input type="hidden" id="newRespondUserId" name="idUsuario" value="">
                 <input type="hidden" id="newRespondPostId" name="idPost" value="">
                 <div class="form-group">
-                  <input type="text" class="form-text" id="addResponse" placeholder="Añade una respuesta...">
+                  <textarea class="form-text w-100 mt-3 response-area" id="addResponse" placeholder="Añade una respuesta..."></textarea>
                 </div>
-                <button type="submit" id='btnAddResponse' class="btn btn-primary">Postear</button>
+                <div class="row">
+                  <a href="#" class="col-1 fa-regular fa-image mt-3"></a>
+                  <a href="#" class="col-1 fa-regular fa-circle mt-3"></a>
+                  <a href="#" class="col-1 fa-solid fa-bars-staggered mt-3"></a>
+                  <a href="#" class="col-1 fa-regular fa-face-smile mt-3"></a>
+                  <a href="#" class="col-1 fa-regular fa-calendar mt-3"></a>
+                  <a href="#" class="col-1 fa-regular fa-compass mt-3"></a>
+                  <div class="col-6 text-end">
+                    <button type="submit" id='btnAddResponse' class="btn btn-primary">Publicar</button>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
