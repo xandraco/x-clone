@@ -1,108 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>X</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="shortcut icon" href="//abs.twimg.com/favicons/twitter.3.ico">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
   <script src="https://kit.fontawesome.com/66909aad39.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="/css/home.css">
 </head>
+
 <body>
 
-<div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3 sidenav">
-      <svg viewBox="0 0 24 24"  class="mainIcon"><g><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></g></svg>
-      <ul class="nav nav-pills nav-stacked">
-        <div class="d-grid m-2 w-100">
-          <li class="active"><a href="#section1" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-house"></i> Principal</a></li>
-          <li><a href="#section2" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-magnifying-glass"></i> Explorar</a></li>
-          <li><a href="#section3" class="btn btn-light rounded-pill mb-2"><i class="fa-regular fa-bell"></i> Notificaciones</a></li>
-          <li><a href="#section4" class="btn btn-light rounded-pill mb-2"><i class="fa-regular fa-envelope"></i> Mensajes</a></li>
-          <li><a href="#section5" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-bars"></i> Listas</a></li>
-          <li><a href="#section6" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-user-group"></i> Comunidades</a></li>
-          <li><a href="#section7" class="btn btn-light rounded-pill mb-2"><i class="fa-brands fa-x-twitter"></i> Premium</a></li>
-          <li><a href="#section8" class="btn btn-light rounded-pill mb-2"><i class="fa-regular fa-user"></i> Perfil</a></li>
-          <li><a href="#section9" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-ellipsis"></i> Más</a></li>
-          <li><a href="#section9" class="btn btn-primary rounded-pill mb-2 w-100">Publicar</a></li>
-        </div>
-      </ul><br>
-      <h4 id="userBlog">John's Blog</h4>
-    </div>
-
-    <div class="col-sm-6">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col text-center">
-            Para ti
+  <div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+        <svg viewBox="0 0 24 24" class="mainIcon">
+          <g>
+            <path
+              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
+            </path>
+          </g>
+        </svg>
+        <ul class="nav nav-pills nav-stacked">
+          <div class="d-grid m-2 w-100">
+            <li class="active"><a href="#section1" class="btn btn-light rounded-pill mb-2"><i
+                  class="fa-solid fa-house"></i> Principal</a></li>
+            <li><a href="#section2" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-magnifying-glass"></i>
+                Explorar</a></li>
+            <li><a href="#section3" class="btn btn-light rounded-pill mb-2"><i class="fa-regular fa-bell"></i>
+                Notificaciones</a></li>
+            <li><a href="#section4" class="btn btn-light rounded-pill mb-2"><i class="fa-regular fa-envelope"></i>
+                Mensajes</a></li>
+            <li><a href="#section5" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-bars"></i> Listas</a>
+            </li>
+            <li><a href="#section6" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-user-group"></i>
+                Comunidades</a></li>
+            <li><a href="#section7" class="btn btn-light rounded-pill mb-2"><i class="fa-brands fa-x-twitter"></i>
+                Premium</a></li>
+            <li><a href="#section8" class="btn btn-light rounded-pill mb-2"><i class="fa-regular fa-user"></i>
+                Perfil</a></li>
+            <li><a href="#section9" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-ellipsis"></i> Más</a>
+            </li>
+            <li><a href="#section9" class="btn btn-primary rounded-pill mb-2 w-100">Publicar</a></li>
           </div>
-          <div class="col text-center">
-            Siguiendo
-          </div>
-        </div>
+        </ul><br>
+        <h4 id="userBlog">John's Blog</h4>
       </div>
-      <div class="">
-        <div class="card">
-          <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
-            <input type="hidden" name="idUsuario" id="idUsuario">
-            <div class="row">
-              <div class="col">
-                <div class="form-group">
-                  <input class="form-input" type="text" placeholder="Post title" name="titulo">
-                </div>
-              </div>
-              <div class="">									
-                <div class="form-group">
-                  <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
-                </div>
-              </div>
-              <div class="card-footer form-group">
-                <div class="row">
-                  <a href="#" class="col-1"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M448 80c8.8 0 16 7.2 16 16V415.8l-5-6.5-136-176c-4.5-5.9-11.6-9.3-19-9.3s-14.4 3.4-19 9.3L202 340.7l-30.5-42.7C167 291.7 159.8 288 152 288s-15 3.7-19.5 10.1l-80 112L48 416.3l0-.3V96c0-8.8 7.2-16 16-16H448zM64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm80 192a48 48 0 1 0 0-96 48 48 0 1 0 0 96z"/></svg></a>
-                  <a href="#" class="col-1"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256z"/></svg></a>
-                  <a href="#" class="col-1"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></a>
-                  <a href="#" class="col-1"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm177.6 62.1C192.8 334.5 218.8 352 256 352s63.2-17.5 78.4-33.9c9-9.7 24.2-10.4 33.9-1.4s10.4 24.2 1.4 33.9c-22 23.8-60 49.4-113.6 49.4s-91.7-25.5-113.6-49.4c-9-9.7-8.4-24.9 1.4-33.9s24.9-8.4 33.9 1.4zM144.4 208a32 32 0 1 1 64 0 32 32 0 1 1 -64 0zm192-32a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg></a>
-                  <a href="#" class="col-1"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512"><path d="M152 24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H64C28.7 64 0 92.7 0 128v16 48V448c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V192 144 128c0-35.3-28.7-64-64-64H344V24c0-13.3-10.7-24-24-24s-24 10.7-24 24V64H152V24zM48 192H400V448c0 8.8-7.2 16-16 16H64c-8.8 0-16-7.2-16-16V192z"/></svg></a>
-                  <a href="#" class="col-1"><svg xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512"><path d="M464 256A208 208 0 1 0 48 256a208 208 0 1 0 416 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm306.7 69.1L162.4 380.6c-19.4 7.5-38.5-11.6-31-31l55.5-144.3c3.3-8.5 9.9-15.1 18.4-18.4l144.3-55.5c19.4-7.5 38.5 11.6 31 31L325.1 306.7c-3.2 8.5-9.9 15.1-18.4 18.4zM288 256a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg></a>
-                  <button type="submit" class="btn btn-primary rounded-pill col-6">Publicar</button>
-                </div>
-              </div>
+
+      <div class="col-sm-6">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col text-center">
+              Para ti
             </div>
-          </form>
+            <div class="col text-center">
+              Siguiendo
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="card">
+            <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
+              <input type="hidden" name="idUsuario" id="idUsuario">
+              <div class="row">
+                <div class="col">
+                  <div class="form-group">
+                    <input class="form-input" type="text" placeholder="Post title" name="titulo">
+                  </div>
+                </div>
+                <div class="">
+                  <div class="form-group">
+                    <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
+                  </div>
+                </div>
+                <div class="card-footer form-group">
+                  <div class="row">
+                    <a href="#" class="col-1 fa-regular fa-image"></a>
+                    <a href="#" class="col-1 fa-regular fa-circle"></a>
+                    <a href="#" class="col-1 fa-solid fa-bars-staggered"></a>
+                    <a href="#" class="col-1 fa-regular fa-face-smile"></a>
+                    <a href="#" class="col-1 fa-regular fa-calendar"></a>
+                    <a href="#" class="col-1 fa-regular fa-compass"></a>
+                    <button type="submit" class="btn btn-primary rounded-pill col-6">Publicar</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div id="postUsuarios">
         </div>
       </div>
-      <div id="postUsuarios">
+
+      <div class="col-sm-3">
+
+      </div>
+
+
+      <!-- Modal Agregar respuesta -->
+      <div class="modal fade" id="newRespondModal" tabindex="-1" role="dialog" aria-labelledby="newRespondModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h5 class="modal-title text-end w-100" id="AddUsuarioModalLabel">Borradores</h5>
+            </div>
+            <div class="modal-body">
+              <!-- Formulario para Agregar respuesta -->
+              <div id="userToRespond"></div>
+              <form id="AddRespondForm">
+                <input type="hidden" id="newRespondUserId" name="idUsuario" value="">
+                <input type="hidden" id="newRespondPostId" name="idPost" value="">
+                <div class="form-group">
+                  <input type="text" class="form-text" id="addResponse" placeholder="Añade una respuesta...">
+                </div>
+                <button type="submit" id='btnAddResponse' class="btn btn-primary">Postear</button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="col-sm-3">
-
-    </div>
   </div>
-</div>
 
-<template id="cardPost">
-  <div class="card" style="width: 100%;">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  <template id="userToRespondCard">
+    <div class="card" style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
     </div>
-    <div class="card-footer row">
-      <a href="#" class="col-2"></a>
-      <a href="#" class="col-2"></a>
-      <a href="#" class="col-2"></a>
-      <a href="#" class="col-2"></a>
-      <a href="#" class="col-2"></a>
-      <a href="#" class="col-2"></a>
-    </div>
-  </div>
-</template>
+  </template>
 
-<script src="./js/home.js"></script>
+  <template id="cardPost">
+    <div class="card" style="width: 100%;">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+      </div>
+      <div class="card-footer row">
+        <a href="#" class="col-2 newRespond fa-regular fa-comment" data-bs-toggle="modal" data-bs-target="#newRespondModal"
+          data-user-id="" data-post-id=""></a>
+        <a href="#" class="col-2 fa-solid fa-retweet"></a>
+        <a href="#" class="col-2 fa-regular fa-heart"></a>
+        <a href="#" class="col-2 fa-solid fa-chart-simple"></a>
+        <a href="#" class="col-2 fa-regular fa-bookmark"></a>
+        <a href="#" class="col-2 fa-solid fa-arrow-up-right-from-square"></a>
+      </div>
+    </div>
+  </template>
+
+
+  <script src="./js/home.js"></script>
 
 </body>
+
 </html>
