@@ -11,9 +11,9 @@
   $result = mysqli_query($conn, $queryInsert);
 
   if ($result) {
-    echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Se ha registrado el post']);
+    echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Se ha registrado el reponse']);
     Header("Location: ../../home.html?usuario=".$idUsuario);
   } else {
-    echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'No se ha registrado el post']);
+    echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'No se ha registrado el response']);
   }
 ?>

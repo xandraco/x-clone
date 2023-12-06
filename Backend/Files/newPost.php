@@ -13,7 +13,7 @@
 
   if ($result) {
     echo json_encode(['STATUS' => 'SUCCESS', 'MESSAGE' => 'Se ha registrado el post']);
-    Header("Location: ../../home.html?usuario=".$idUsuario);
+    Header("Location: ../../home.html?email=".$idUsuario);
   } else {
     echo json_encode(['STATUS' => 'ERROR', 'MESSAGE' => 'No se ha registrado el post']);
   }
