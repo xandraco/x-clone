@@ -5,6 +5,7 @@
 .sidenav {
     background-color: #fff!important;
     height: 100%;
+    position: relative;
 }
 
 /* Set black background color, white text and some padding */
@@ -149,4 +150,8 @@ footer {
 .form-block .card {
     border-left-color: #fff !important;
     border-right-color: #fff !important;
+}
+
+a.fa-regular, a.fa-solid {
+    text-decoration: none !important;
 }
