@@ -15,11 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', function (event) {
         if (event.target.classList.contains('newRespond')) {
             const modal = document.getElementById('newRespondModal');
-            // ID User
-            const iduserToRespond = event.target.getAttribute('data-user-id');
-            const iduserInput = modal.querySelector('#newRespondUserId'); // Campo oculto en el formulario modal
-            // Actualizar el valor del campo oculto con el ID del usuario seleccionado
-            iduserInput.value = iduserToRespond;
             // ID Post
             const idPostToRespond = event.target.getAttribute('data-post-id');
             const idPostInput = modal.querySelector('#newRespondPostId'); // Campo oculto en el formulario modal
@@ -27,6 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
             idPostInput.value = idPostToRespond;
             loadRespondPost(idPostInput)
         }
+    });
+
+    const searchForm = document.getElementById('AddRespondForm');
+    searchForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Previene la recarga de la página por defecto al enviar el formulario
+        newRespond();
     });
 
     $('#newRespondModal').on('hidden.bs.modal', function () {
@@ -47,7 +48,6 @@ const dibujaPosts = posts => {
         postCard.querySelector('.card-title').textContent = item.idUsuario
         postCard.querySelector('.card-subtitle').textContent = item.titulo + '     ' + item.fecha
         postCard.querySelector('.card-text').textContent = item.mensaje
-        postCard.querySelectorAll('a')[0].setAttribute('data-user-id', item.idUsuario);
         postCard.querySelectorAll('a')[0].setAttribute('data-post-id', item.idPost);
 
         const clone = postCard.cloneNode(true)
@@ -112,8 +112,36 @@ const dibujaPost = post => {
     responseContainer.appendChild(fragment)
 }
 
-respondBtn.addEventListener('click', () => {
-    const idUsuario = document.getElementById('newRespondUserId')
+const newRespond = () => {
+    const url = window.location.search
+    const params = new URLSearchParams(url)
+    const idUsuario = params.get('email');
     const idPost = document.getElementById('newRespondPostId');
     const message = document.getElementById('addResponse');
-})
+
+    const sendData = {
+        idPost: idPost.value,
+        idUsuario: idUsuario,
+        message: message.value
+    };
+
+    console.log(sendData)
+
+    fetch('./Backend/Files/newRespond.php', {
+        method: 'POST',
+        body: JSON.stringify(sendData),
+        headers: {
+            'Content-Type': 'application/json',
+        }
+    }).then(async (response) => {
+        const res = await response.json()
+        if(res.STATUS == 'SUCCESS'){
+            console.log('Respuesta correcta', res)
+            window.location.replace(`/home.html?email=${idUsuario}`)
+        } else {
+            console.log('Respuesta incorrecta')
+        }
+    }).catch(error => {
+        console.error('Error en el fetch:', error);
+    });
+}
