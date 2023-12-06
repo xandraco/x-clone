@@ -48,7 +48,8 @@
                 Perfil</a></li>
             <li><a href="#section9" class="btn btn-light rounded-pill mb-2"><i class="fa-solid fa-ellipsis"></i> Más</a>
             </li>
-            <li><a href="#section9" class="btn btn-primary rounded-pill mb-2 w-100">Publicar</a></li>
+            <li><a href="#section9" class="btn btn-primary rounded-pill mb-2 w-100"  data-bs-toggle="modal"
+              data-bs-target="#newPostModal">Publicar</a></li>
           </div>
         </ul><br>
         <h4 id="userBlog" style="padding-left: 1rem;">John's Blog</h4>
@@ -89,7 +90,7 @@
                     <a href="#" class="col-1 fa-regular fa-calendar mt-3"></a>
                     <a href="#" class="col-1 fa-regular fa-compass mt-3"></a>
                     <div class="col-6 text-end">
-                      <button type="submit" class="btn btn-primary rounded-pill">Publicar</button>
+                      <button type="submit" class="btn btn-primary rounded-pill" data-user-id="">Publicar</button>
                     </div>
                   </div>
                 </div>
@@ -157,7 +158,6 @@
         </div>
       </div>
 
-
       <!-- Modal Agregar respuesta -->
       <div class="modal fade" id="newRespondModal" tabindex="-1" role="dialog" aria-labelledby="newRespondModalLabel"
         aria-hidden="true">
@@ -193,7 +193,56 @@
           </div>
         </div>
       </div>
+      
+      <!-- Modal Nuevo post -->
+      <div class="modal fade" id="newPostModal" tabindex="-1" role="dialog" aria-labelledby="newPostModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="btn-close float-start" data-bs-dismiss="modal" aria-label="Close"></button>
+              <h6 class="modal-title text-end w-100 response-link-title"><a href="#"
+                  class="no-decoration">Borradores</a></h6>
+            </div>
+            <div class="modal-body">
+              <!-- Formulario para Agregar respuesta -->
+              <div id="userToRespond"></div>
+              <form class="form-block" id="newPostForm" method="POST" action="./Backend/Files/newPost.php">
+                <input type="hidden" name="idUsuario" id="idUsuarioModal">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <input class="form-input" type="text" placeholder="Título del Post" name="titulo">
+                    </div>
+                  </div>
+                  <div class="">
+                    <div class="form-group">
+                      <textarea class="form-input" required="" placeholder="¿Qué está pasando?" name="mensaje"></textarea>
+                    </div>
+                  </div>
+                  <div class="card-footer form-group">
+                    <div class="row">
+                      <a href="#" class="col-1 fa-regular fa-image mt-3"></a>
+                      <a href="#" class="col-1 fa-regular fa-circle mt-3"></a>
+                      <a href="#" class="col-1 fa-solid fa-bars-staggered mt-3"></a>
+                      <a href="#" class="col-1 fa-regular fa-face-smile mt-3"></a>
+                      <a href="#" class="col-1 fa-regular fa-calendar mt-3"></a>
+                      <a href="#" class="col-1 fa-regular fa-compass mt-3"></a>
+                      <div class="col-6 text-end">
+                        <button type="submit" class="btn btn-primary rounded-pill"  data-bs-toggle="modal"
+                        data-bs-target="#newPostModal" data-user-id="">Publicar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
   </div>
 
   <template id="userToRespondCard">
