@@ -218,3 +218,11 @@ a.fa-regular, a.fa-solid {
 .trend-container span {
     color: grey !important;
 }
+
+ul {
+    list-style: none !important;
+}
+
+.trending-col {
+    padding-right: 7rem!important;
+}
