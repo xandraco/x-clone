@@ -205,3 +205,16 @@ a.fa-regular, a.fa-solid {
 .response-area, #userToRespondCard {
     border:none !important;
 }
+
+.x-premium, .etiquetas {
+    background-color: rgba(247, 249, 249, 1.00);
+    border: none !important;
+}
+
+.x-premium .card-title, .etiquetas .card-title {
+    font-weight: 700 ;
+}
+
+.trend-container span {
+    color: grey !important;
+}
