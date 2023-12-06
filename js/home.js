@@ -6,6 +6,8 @@ const responseContainer = document.getElementById('userToRespond')
 const responseCard = document.getElementById('userToRespondCard').content
 const fragment = document.createDocumentFragment()
 
+respondBtn = document.getElementById('btnAddResponse')
+
 document.addEventListener('DOMContentLoaded', () => {
     loadUser()
     loadPost()
@@ -110,7 +112,8 @@ const dibujaPost = post => {
     responseContainer.appendChild(fragment)
 }
 
-
-const newRespond = () => {
-
-}
+respondBtn.addEventListener('click', () => {
+    const idUsuario = document.getElementById('newRespondUserId')
+    const idPost = document.getElementById('newRespondPostId');
+    const message = document.getElementById('addResponse');
+})
