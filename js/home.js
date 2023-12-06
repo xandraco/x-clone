@@ -82,7 +82,14 @@ const dibujaResponses = async (idPost) => {
 
     if (res.STATUS === 'SUCCESS') {
         res.MESSAGE.forEach((item) => {
-            responsesHTML += `<li>${item.usuario_email} - ${item.message}</li>`;
+            responsesHTML += `
+            <li>
+                <div class="card" style="width: 100%;">
+                    <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">${item.usuario_email}</h6>
+                        <p class="card-text">${item.message}</p>
+                    </div>
+            </li>`;
         });
     } else {
         responsesHTML = '<li>No hay respuestas para mostrar</li>';
