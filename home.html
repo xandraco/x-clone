@@ -21,7 +21,7 @@
   <div class="container-fluid">
     <div class="row content">
       <div class="col-sm-3 sidenav">
-        <svg viewBox="0 0 24 24" class="mainIcon">
+        <svg viewBox="0 0 24 24" class="mainIcon" style="padding-left: 1rem;">
           <g>
             <path
               d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z">
@@ -51,12 +51,12 @@
             <li><a href="#section9" class="btn btn-primary rounded-pill mb-2 w-100">Publicar</a></li>
           </div>
         </ul><br>
-        <h4 id="userBlog">John's Blog</h4>
+        <h4 id="userBlog" style="padding-left: 1rem;">John's Blog</h4>
       </div>
 
-      <div class="col-sm-6">
-        <div class="container-fluid">
-          <div class="row">
+      <div class="col-sm-6 posts-col">
+        <nav class="container-fluid">
+          <div class="row top-links">
             <div class="col text-center">
               Para ti
             </div>
@@ -64,7 +64,7 @@
               Siguiendo
             </div>
           </div>
-        </div>
+        </nav>
         <div class="">
           <div class="card">
             <form class="form-block" method="POST" action="./Backend/Files/newPost.php">
@@ -72,12 +72,12 @@
               <div class="row">
                 <div class="col">
                   <div class="form-group">
-                    <input class="form-input" type="text" placeholder="Post title" name="titulo">
+                    <input class="form-input" type="text" placeholder="Título del Post" name="titulo">
                   </div>
                 </div>
                 <div class="">
                   <div class="form-group">
-                    <textarea class="form-input" required="" placeholder="Your text" name="mensaje"></textarea>
+                    <textarea class="form-input" required="" placeholder="¿Qué está pasando?" name="mensaje"></textarea>
                   </div>
                 </div>
                 <div class="card-footer form-group">
@@ -88,7 +88,9 @@
                     <a href="#" class="col-1 fa-regular fa-face-smile"></a>
                     <a href="#" class="col-1 fa-regular fa-calendar"></a>
                     <a href="#" class="col-1 fa-regular fa-compass"></a>
-                    <button type="submit" class="btn btn-primary rounded-pill col-6">Publicar</button>
+                    <div class="col-6 text-end">
+                      <button type="submit" class="btn btn-primary rounded-pill">Publicar</button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -99,7 +101,7 @@
         </div>
       </div>
 
-      <div class="col-sm-3">
+      <div class="col-sm-3 trending-col">
 
       </div>
 
@@ -150,7 +152,7 @@
         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
           content.</p>
       </div>
-      <div class="card-footer row">
+      <div class="card-footer row post-card">
         <a href="#" class="col-2 newRespond fa-regular fa-comment" data-bs-toggle="modal" data-bs-target="#newRespondModal"
           data-user-id="" data-post-id=""></a>
         <a href="#" class="col-2 fa-solid fa-retweet"></a>

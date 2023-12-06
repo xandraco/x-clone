@@ -4,16 +4,19 @@
 /* Set gray background color and 100% height */
 .sidenav {
     background-color: #fff!important;
-    height: 100%;
-    position: relative;
+    height: 100vh;
 }
 
-/* Set black background color, white text and some padding */
-footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
+.posts-col {
+    height: 100vh !important;
+    overflow-y: scroll;
 }
+
+.trending-col {
+    height: 100vh !important;
+    overflow-y: scroll;
+}
+
 
 .be-comment-block {
     margin-bottom: 50px !important;
@@ -109,7 +112,7 @@ footer {
     font-size: 13px;
     line-height: 50px;
     font-weight: 400;
-    color: #b4b7c1;
+    color: #000;
     width: 100%;
     height: 50px;
     padding-left: 20px;
@@ -155,3 +158,43 @@ footer {
 a.fa-regular, a.fa-solid {
     text-decoration: none !important;
 }
+
+/*Remove the scrollbar from Chrome, Safari, Edge and IE*/
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+* {
+  -ms-overflow-style: none !important;
+}
+
+.card-footer.post-card {
+    background-color: transparent !important;
+}
+
+.btn {
+    font-weight: 550!important;
+}
+
+.top-links {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.top-links .col.text-center:hover {
+    background-color: rgba(15, 20, 25, 0.1);
+}
+
+.top-links .col.text-center {
+    min-height:2.5rem !important;
+}
+
+.container-fluid {
+    position: relative !important;
+}
+
+.sidenav {
+    padding-left: 6rem!important;
+}
+
