@@ -1,9 +1,9 @@
 /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
-.row.content {height: 1500px}
+.row.content {height: 100vh!important;}
 
 /* Set gray background color and 100% height */
 .sidenav {
-    background-color: #f1f1f1;
+    background-color: #fff!important;
     height: 100%;
 }
 
@@ -132,4 +132,21 @@ footer {
     padding: 15px;
     }
     .row.content {height: auto;} 
+}
+
+.mainIcon {
+    max-height: 2.4rem !important;
+}
+
+.btn {
+    font-size: 1.22rem !important;
+}
+
+.form-block .card-footer {
+    background-color: #fff;
+    border-top-color: #fff;
+}
+.form-block .card {
+    border-left-color: #fff !important;
+    border-right-color: #fff !important;
 }
