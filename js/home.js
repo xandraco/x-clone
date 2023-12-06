@@ -2,6 +2,8 @@ let loggedUser = {}
 const titulo = document.getElementById('userBlog')
 const postContainer = document.getElementById('postUsuarios')
 const postCard = document.getElementById('cardPost').content
+const respondContainer = document.getElementById('respondUsuarios')
+const respondCard = document.getElementById('cardResponse').content
 const responseContainer = document.getElementById('userToRespond')
 const responseCard = document.getElementById('userToRespondCard').content
 const fragment = document.createDocumentFragment()
@@ -43,18 +45,53 @@ const loadPost = async () => {
     console.log('posts => ', items)
 }
 
-const dibujaPosts = posts => {
-    posts.forEach((item) => {
-        postCard.querySelector('.card-title').textContent = item.idUsuario
-        postCard.querySelector('.card-subtitle').textContent = item.titulo + '     ' + item.fecha
-        postCard.querySelector('.card-text').textContent = item.mensaje
-        postCard.querySelectorAll('a')[0].setAttribute('data-post-id', item.idPost);
+const dibujaPosts = async posts => {
+    const postElements = await Promise.all(posts.map(async (item) => {
+        const clone = postCard.cloneNode(true); // Clonar el postCard original
 
-        const clone = postCard.cloneNode(true)
-        fragment.appendChild(clone)
-    })
-    postContainer.appendChild(fragment)
-}
+        clone.querySelector('.card-title').textContent = item.idUsuario;
+        clone.querySelector('.card-subtitle').textContent = item.titulo + '     ' + item.fecha;
+        clone.querySelector('.card-text').textContent = item.mensaje;
+        clone.querySelectorAll('a')[0].setAttribute('data-post-id', item.idPost);
+
+        const responses = await dibujaResponses(item.idPost);
+        clone.querySelector('ul').innerHTML = responses;
+
+        return clone;
+    }));
+
+    postElements.forEach(element => {
+        fragment.appendChild(element);
+    });
+
+    postContainer.appendChild(fragment);
+};
+
+
+const dibujaResponses = async (idPost) => {
+    const sendData = {
+        idPost: idPost
+    };
+    const response = await fetch('./Backend/Files/loadResponses.php', {
+        method: 'POST',
+        body: JSON.stringify(sendData),
+        headers: { 'Content-Type': 'application/json' }
+    });
+    const res = await response.json();
+    let responsesHTML = '';
+
+    if (res.STATUS === 'SUCCESS') {
+        res.MESSAGE.forEach((item) => {
+            responsesHTML += `<li>${item.usuario_email} - ${item.message}</li>`;
+        });
+    } else {
+        responsesHTML = '<li>No hay respuestas para mostrar</li>';
+    }
+
+    return responsesHTML;
+};
+
+
 
 const loadUser = () => {
     const url = window.location.search
@@ -98,7 +135,6 @@ const loadRespondPost = (idPostInput) => {
     }).catch(error => console.error('Error de Fetch:', error));
 }
 
-
 const dibujaPost = post => {
     responseContainer.innerHTML = '';
     post.forEach((item) => {
@@ -135,7 +171,7 @@ const newRespond = () => {
         }
     }).then(async (response) => {
         const res = await response.json()
-        if(res.STATUS == 'SUCCESS'){
+        if (res.STATUS == 'SUCCESS') {
             console.log('Respuesta correcta', res)
             window.location.replace(`/home.html?email=${idUsuario}`)
         } else {
