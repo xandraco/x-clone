@@ -42,6 +42,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('AddRespondForm').reset();
     });
 
+    $('#newPostModal').on('hidden.bs.modal', function () {
+        document.getElementById('newPostForm').reset();
+    });
+
 });
 
 // Función para cargar las publicaciones
@@ -125,7 +129,9 @@ const loadUser = () => {
             const user = await response.json();
             loggedUser = user.MESSAGE;
             const inputIdUser = document.getElementById('idUsuario');
+            const inputIdUserModal = document.getElementById('idUsuarioModal');
             inputIdUser.value = loggedUser.email;
+            inputIdUserModal.value = loggedUser.email;
             titulo.innerHTML = loggedUser.nombre;
             console.log('response => ', loggedUser);
         });
